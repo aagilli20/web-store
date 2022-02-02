@@ -43,7 +43,7 @@
                     <td class="align-middle text-center">{{ $product->status }}</td>
                     <td class="align-middle text-center">{{ $product->warranty }}</td>
                     <td class="align-middle text-center">{{ $product->stock }}</td>
-                    <td class="align-middle text-center">{{ $product->price }}</td>
+                    <td class="align-middle text-center">AR$ {{ $product->price }}</td>
                     <td class="align-middle text-center">
                         <form action="/admin/{{ $product->id }}" method="POST">
                             @csrf

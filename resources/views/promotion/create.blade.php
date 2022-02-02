@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('css')
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+@endsection
+
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -23,7 +28,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="product_id" >Producto</label>
-                        <select class="form-control" id="product_id" name="product_id">
+                        <select class="selectpicker form-control" data-live-search="true" data-style="btn-primary" id="product_id" name="product_id">
                             <option value="-1">Seleccione un producto</option>
                             @foreach ($products as $product)
                             <option value="{{ $product->id }}">{{ $product->name }}</option>
@@ -47,4 +52,14 @@
           </form>
     </div>
 </div>
+
+@section('js')
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+<script>
+   $('.product_id').selectpicker();
+</script>
+@endsection
+
 @endsection

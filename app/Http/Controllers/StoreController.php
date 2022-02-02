@@ -31,7 +31,7 @@ class StoreController extends Controller
      */
     public function indexGrid()
     {
-        $products = Product::paginate(9);
+        $products = Product::paginate(8);
         $categories = Category::whereNull('father_category_id')->get();
         return view('store.indexGrid', compact('products', $products, 'categories', $categories));
     }

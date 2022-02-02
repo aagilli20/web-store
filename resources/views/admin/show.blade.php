@@ -13,7 +13,9 @@
             
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="float:right; width:25%; height:25%;">
                 <div class="carousel-inner">
-                    {{ $first = true }}
+                    @php 
+                      $first = true;
+                    @endphp
                     @foreach ($images as $image)
                         @if ($first)
                         <div class="carousel-item active">
@@ -37,7 +39,7 @@
                 </a>
               </div>
 
-            <h5 class="card-title">Precio: {{ $product->price }}</h5>
+            <h5 class="card-title">Precio: AR$ {{ $product->price }}</h5>
             <p class="card-text">Descripción: {{ $product->description }}</p>
             <p class="card-text">Estado: {{ $product->status }}</p>
             <p class="card-text">Garantía: {{ $product->warranty }}</p>
